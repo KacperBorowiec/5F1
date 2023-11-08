@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-    <style>
-
-      body {
-          background-image: url("zdj/lech.png");
-          background-attachment: fixed;
-     background-size: cover;
-      }
-
-        @media screen and (orientation: portrait){
-           body{
-               background-image: url("zdj/legia.png");
-           }
-        }
-
-
-
-        </style>
+    <title>Prosty Kalkulator</title>
 </head>
 <body>
+
+<h1>Prosty Kalkulator</h1>
+
+<input type="number" id="liczba1" placeholder="Liczba 1">
+<input type="number" id="liczba2" placeholder="Liczba 2">
+<button onclick="obliczSume()">Oblicz</button>
+
+<script>
+    function obliczSume() {
+        // Pobierz wartości wprowadzone przez użytkownika
+        var liczba1 = parseFloat(document.getElementById("liczba1").value);
+        var liczba2 = parseFloat(document.getElementById("liczba2").value);
+
+        // Sprawdź, czy wprowadzone wartości są liczbami
+        if (isNaN(liczba1) || isNaN(liczba2)) {
+            alert("Wprowadź poprawne liczby.");
+        } else {
+            // Oblicz sumę
+            var suma = liczba1 + liczba2;
+
+            // Wyświetl wynik w okienku alert
+            alert("Wynik: " + suma);
+        }
+    }
+</script>
+
 </body>
 </html>
